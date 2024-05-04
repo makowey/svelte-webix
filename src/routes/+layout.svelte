@@ -6,6 +6,6 @@
 	}
 </script>
 
-<LibLoader url="webix/skin.js" on:loaded="{onLoaded}" />
+<LibLoader url="%sveltekit.assets%/webix/skin.js" on:loaded="{onLoaded}" />
 
 <slot />

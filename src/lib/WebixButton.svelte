@@ -3,19 +3,15 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { movies } from '$lib/movies';
 
-	let components = [];
 	let webixUI;
+
+	let colorCode = '#860EFE';
 
 	onMount(() => {
 		let header = {
 			view: 'label',
 			type: 'header',
 			template: `Webix Header ${webix.uid()}`
-		};
-
-		let button = {
-			view: 'button',
-			value: 'demo'
 		};
 
 		let dataTable = {
@@ -46,15 +42,34 @@
 			]
 		};
 
+		let colorPickerRows = {
+			rows:
+				[
+					{
+						id: 'colorPicker',
+						'label': 'Color',
+						'value': colorCode,
+						'view': 'colorpicker',
+						on: {
+							onChange: function(value) {
+								colorCode = value;
+							}
+						}
+					},
+					{ 'view': 'template', 'template': 'You can place any widget here..', 'role': 'placeholder' }
+				]
+		};
+
 		webixUI = webix.ui({
 			container: 'webixContainer',
 			rows: [
 				header,
-				button,
+				colorPickerRows,
 				dataTable
 			]
 		});
-	});
+	})
+	;
 
 	onDestroy(() => {
 		webixUI.destructor();
@@ -63,3 +78,5 @@
 </script>
 
 <div id="webixContainer"></div>
+
+Color selection: {colorCode}
