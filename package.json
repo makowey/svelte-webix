@@ -1,6 +1,6 @@
 {
   "name": "svelte-webix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "scripts": {
     "dev": "vite dev",
@@ -36,7 +36,7 @@
     "webix-polyglot": "3.0.0"
   },
   "type": "module",
-  "description": "Everything you need to build a Svelte project with Webix and Tailwind support, powered by [`svelte-webix`](https://github.com/makowey/svelte-webix.git).",
+  "description": "Everything you need to build a Svelte project with Webix and Tailwind support, powered by [`create-svelte-webix`](https://github.com/makowey/svelte-webix.git).",
   "main": "svelte.config.js",
   "dependencies": {
     "eslint-compat-utils": "^0.5.0",
