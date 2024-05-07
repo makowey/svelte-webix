@@ -62,6 +62,7 @@
 
 		webixUI = webix.ui({
 			container: 'webixContainer',
+			css: 'm-2',
 			rows: [
 				header,
 				colorPickerRows,
