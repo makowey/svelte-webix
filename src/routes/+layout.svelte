@@ -1,4 +1,5 @@
 <script>
+	import "../app.css";
 	import LibLoader from '$lib/LibLoader.svelte';
 
 	function onLoaded() {
