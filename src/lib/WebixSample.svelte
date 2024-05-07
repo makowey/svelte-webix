@@ -79,5 +79,4 @@
 </script>
 
 <div id="webixContainer"></div>
-
-Color selection: {colorCode}
+<div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">Color selection: {colorCode}</div>
