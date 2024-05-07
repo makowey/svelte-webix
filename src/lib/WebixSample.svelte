@@ -3,16 +3,16 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { movies } from '$lib/movies';
 
+	const __ = globalThis.$$;
 	let webixUI;
 
 	let colorCode = '#860EFE';
-	const __ = globalThis.$$;
 
 	onMount(() => {
 		let header = {
 			view: 'template',
 			type: 'header',
-			template: `Webix Header ${webix.uid()}`,
+			template: `Webix Header uid:${webix.uid()}`,
 			css: 'webix_dark'
 		};
 
@@ -71,8 +71,7 @@
 								colorCode = value;
 							}
 						}
-					},
-					{ 'view': 'template', 'template': 'You can place any widget here..', 'role': 'placeholder' }
+					}
 				]
 		};
 
@@ -97,5 +96,6 @@
 </script>
 
 <div id="webixContainer"></div>
-<div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">Color
-	selection: {colorCode}</div>
+<div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">
+	Color selection: {colorCode}
+</div>
