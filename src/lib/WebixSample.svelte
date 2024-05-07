@@ -82,3 +82,9 @@
 
 <div id="webixContainer"></div>
 <div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">Color selection: {colorCode}</div>
+
+<style lang="postcss">
+    :global(html) {
+        background-color: theme(colors.gray.100);
+    }
+</style>
