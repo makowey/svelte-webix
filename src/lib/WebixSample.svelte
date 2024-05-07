@@ -6,6 +6,7 @@
 	let webixUI;
 
 	let colorCode = '#860EFE';
+	const __ = globalThis.$$;
 
 	onMount(() => {
 		let header = {
@@ -22,6 +23,7 @@
 			rows: [
 				{
 					view: 'datatable',
+					id: 'movieTable',
 					scrollY: false,
 					autoConfig: true,
 					columns: [
@@ -40,6 +42,18 @@
 					id: 'pagerA',
 					size: 10,
 					group: 5
+				},
+				{
+					view: 'form', id: 'form1', elements: [
+						{ view: 'text', name: 'title', label: 'Title' },
+						{ view: 'text', name: 'year', label: 'Year' },
+						{
+							view: 'button', value: 'Save', click: function() {
+								const v1 = __('form1').getDirtyValues();
+								__('form1').save(v1);
+							}
+						}
+					]
 				}
 			]
 		};
@@ -71,6 +85,8 @@
 				dataTable
 			]
 		});
+
+		__('form1').bind(__('movieTable'));
 	})
 	;
 
@@ -81,10 +97,5 @@
 </script>
 
 <div id="webixContainer"></div>
-<div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">Color selection: {colorCode}</div>
-
-<style lang="postcss">
-    :global(html) {
-        background-color: theme(colors.gray.100);
-    }
-</style>
+<div class="absolute bottom-1.5 text-center font-bold mx-2" style="color: {colorCode}">Color
+	selection: {colorCode}</div>
