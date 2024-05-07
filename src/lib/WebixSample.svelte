@@ -9,25 +9,21 @@
 
 	onMount(() => {
 		let header = {
-			view: 'label',
+			view: 'template',
 			type: 'header',
-			template: `Webix Header ${webix.uid()}`
+			template: `Webix Header ${webix.uid()}`,
+			css: 'webix_dark'
 		};
 
 		let dataTable = {
 			margin: 10,
 			height: 830,
-			width: 420,
+			width: 430,
 			rows: [
-				{
-					view: 'pager',
-					id: 'pagerA',
-					size: 10,
-					group: 5
-				},
 				{
 					view: 'datatable',
 					scrollY: false,
+					autoConfig: true,
 					columns: [
 						{ id: 'rank', header: '#', width: 50, sort: 'int', css: 'rank' },
 						{ id: 'title', header: 'Film title', width: 200, sort: 'string' },
@@ -35,9 +31,15 @@
 						{ id: 'votes', header: 'Votes', width: 100, sort: 'int' }
 					],
 					pager: 'pagerA',
-					select: true, yCount: 10,
-					autowidth: true,
+					select: true,
+					yCount: 10,
 					data: movies
+				},
+				{
+					view: 'pager',
+					id: 'pagerA',
+					size: 10,
+					group: 5
 				}
 			]
 		};
